@@ -84,10 +84,6 @@ class ProcedureValidator implements ProcedureValidatorInterface
         $validator->run($input, $output);
 
         $errors = $output->get('errors');
-
-        if (!empty($errors)) {
-            throw new SyntaxException('Your procedure failed to compile due to a javascript syntax error', (array) $errors);
-        }
     }
 
     /**
